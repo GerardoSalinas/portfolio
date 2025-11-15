@@ -1,0 +1,20 @@
+[
+    {
+        "imageSource": "public/images/Hackathon.jpg",
+        "achievementNumber": "1",
+        "title": "Podio Hackathon ETH Jaguar 2025",
+        "description": "Junto a mi equipo desarrollamos Decibels, una plataforma con bases en blockchain, orientada a impulsar a músicos emergentes del país, plataforma que nos aseguró el tercer lugar en el evento"
+    },
+    {
+        "imageSource": "public/images/VECibersecurity.png",
+        "achievementNumber": "2",
+        "title": "Intercambio Virtual Internacional ",
+        "description": "Evento entre estudiantes de grado y pregado de la universidad de St. John’s en New York, la Universidad Nacional Autónoma de Honduras y la PUC de Sao Paulo en Brazil desarrollando un análisis de vulnerabilidades al ataque al sistema de pagos PIX"
+    },
+    {
+        "imageSource": "public/images/tallerCIIE11.jpg",
+        "achievementNumber": "3",
+        "title": "Taller de Desarrollo Web AEIS-CIIE",
+        "description": "Facilitador de un taller de desarrollo web como una colaboración entre la Asociación de Estudiantes de Ingeniería en Sistemas (AEIS) y el Centro de Investigación e Innovación Educativa (CIIE)"
+    }
+]

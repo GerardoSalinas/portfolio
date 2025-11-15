@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Sobre Mí ",
+        "referencedSection": "#sobre-mi"
+    },
+
+    {
+        "name": "Proyectos",
+        "referencedSection": "#proyectos"
+    },
+    
+    {
+        "name": "Logros",
+        "referencedSection": "#logros"
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "imageSource": "",
+        "title": "Sistema de Registro UNAH",
+        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
+        "projectNumber": "1",
+        "gitHubLink": "",
+        "tags": ["",""]
+    },
+    {
+        "imageSource": "",
+        "title": "Red Neuronal de Reconocimiento Facial",
+        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
+        "projectNumber": "2",
+        "gitHubLink": "",
+        "tags": ["",""]
+
+    },
+    {
+        "imageSource": "public/images/evidenciaPortalAzure.png",
+        "title": "Infraestructura de Plataforma de alquiler de vehículos",
+        "description": "Diseñé y desplegué una arquitectura en Azure usando terraform. La infraestructura está enfocada en una empresa de alquiler de vehículos",
+        "projectNumber": "3",
+        "gitHubLink": "",
+        "tags": ["",""]
+    }
+]

@@ -1,11 +1,81 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css"
+import NavBarItems from '../content/db/NavBar.json' with { type: 'json' };
+import Achievements from "../content/db/Achievements.json" with { type: 'json' };
+import Projects from "../content/db/Projects.json" with { type: 'json' };
+import NavBar from "../components/NavBar.astro";
+import HeroSection from '../components/HeroSection.astro';
+import AboutMe from "../components/AboutMe.astro";
+import ProjectsCaroussel from "../components/ProjectsCaroussel.astro";
+import AchievementsCaroussel from '../components/AchievementsCaroussel.astro';
+import Footer from "../components/Footer.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi Portafolio</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/d34720e279.js" crossorigin="anonymous"></script>
+	<style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.carousel-container {
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+	}
+	.carousel-item {
+		scroll-snap-align: start;
+	}
+	</style>
+</head>
+	<body class="bg-zinc-950 text-gray-100">
+		<NavBar items={NavBarItems}/>
+
+		<HeroSection/>
+
+		<AboutMe/>
+
+		<section id="proyectos" class="py-24 bg-zinc-950">
+			<div class="container mx-auto px-6">
+				<h2 class="text-5xl font-bold mb-4 text-center">
+					<span 
+						class="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
+					>Proyectos
+					</span>
+				</h2>
+				<p class="text-center text-gray-400 mb-16 text-lg">Algunos de mis trabajos recientes</p>
+				
+				<div class="relative max-w-7xl mx-auto">
+					
+					<ProjectsCaroussel listItems={Projects}/>
+					
+				</div>
+			</div>
+		</section>
+
+		<section id="logros" class="py-24 bg-zinc-900">
+			<div class="container mx-auto px-6">
+				<h2 class="text-5xl font-bold mb-4 text-center">
+				<span class="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+					Logros
+				</span>
+				</h2>
+				<p class="text-center text-gray-400 mb-16 text-lg">Hitos destacados en mi carrera</p>
+				
+				<div class="relative max-w-4xl mx-auto">
+					<AchievementsCaroussel listItems={Achievements}>
+				</div>
+			</div>
+		</section>
+
+		<Footer/>
+	</body>
+</html>
+

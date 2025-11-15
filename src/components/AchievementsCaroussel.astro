@@ -1,0 +1,111 @@
+---
+import AchievementCard from './AchievementCard.astro';
+
+export interface Achievement {
+    imageSource: string,
+    title: string,
+    description: string
+    achievementNumber: string
+}
+
+
+interface Props {
+    listItems: Array<Achievement>
+}
+
+const { listItems } = Astro.props;
+const itemsPerSlide = 3;
+const totalSlides = Math.ceil(listItems.length / itemsPerSlide);
+---
+
+<div id="achievementsCarousel" class="overflow-hidden rounded-2xl">
+        <div class="flex transition-transform duration-500 ease-out" id="achievementsTrack">
+            {
+                Array.from({ length: totalSlides }, (_, slideIndex) => {
+                    const startIdx = slideIndex * itemsPerSlide;
+                    const endIdx = startIdx + itemsPerSlide;
+                    const slideProjects = listItems.slice(startIdx, endIdx);
+                    
+                    return (
+                        <div class="min-w-full grid md:grid-cols-3 gap-8 px-2">
+                            {
+                                slideProjects.map((achievement) => (
+                                    <AchievementCard achievement={achievement}/>
+                                ))
+                            }
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </div>
+
+			
+    <button id="prevAchievements" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full transition-all z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+    </button>
+    <button id="nextAchievements" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full transition-all z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+    </button>
+
+			
+    <div class="flex justify-center gap-2 mt-8">
+        {
+            Array.from({ length: totalSlides }, (_, i) => (
+                <button 
+                    class={`achievementsCarousel-indicator w-3 h-3 rounded-full ${i === 0 ? 'bg-orange-600' : 'bg-gray-600'}`}
+                    data-slide={i}
+                />
+            ))
+        }
+        <!-- <button class="achievement-indicator w-3 h-3 rounded-full bg-orange-600" data-slide="0"></button> -->
+        <!-- <button class="achievement-indicator w-3 h-3 rounded-full bg-gray-600" data-slide="1"></button>
+        <button class="achievement-indicator w-3 h-3 rounded-full bg-gray-600" data-slide="2"></button>
+        <button class="achievement-indicator w-3 h-3 rounded-full bg-gray-600" data-slide="3"></button> -->
+    </div>
+
+<script>
+    let currentAchievementSlide = 0;
+    const achievementsTrack = document.getElementById('achievementsTrack');
+    const totalAchievementSlides = 4;
+    const achievementIndicators = document.querySelectorAll('.achievement-indicator');
+
+    function updateAchievementCarousel() {
+        achievementsTrack.style.transform = `translateX(-${currentAchievementSlide * 100}%)`;
+        achievementIndicators.forEach((indicator, index) => {
+        if (index === currentAchievementSlide) {
+            indicator.classList.remove('bg-gray-600');
+            indicator.classList.add('bg-orange-600');
+        } else {
+            indicator.classList.remove('bg-orange-600');
+            indicator.classList.add('bg-gray-600');
+        }
+        });
+    }
+
+    document.getElementById('nextAchievements').addEventListener('click', () => {
+        currentAchievementSlide = (currentAchievementSlide + 1) % totalAchievementSlides;
+        updateAchievementCarousel();
+    });
+
+    document.getElementById('prevAchievements').addEventListener('click', () => {
+        currentAchievementSlide = (currentAchievementSlide - 1 + totalAchievementSlides) % totalAchievementSlides;
+        updateAchievementCarousel();
+    });
+
+    achievementIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+        currentAchievementSlide = index;
+        updateAchievementCarousel();
+        });
+    });
+
+    // setInterval(() => {
+    //     currentAchievementSlide = (currentAchievementSlide + 1) % totalAchievementSlides;
+    //     updateAchievementCarousel();
+    // }, 5000);
+</script>
