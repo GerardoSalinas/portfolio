@@ -1,20 +1,11 @@
 [
     {
-        "imageSource": "",
-        "title": "Sistema de Registro UNAH",
-        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
-        "projectNumber": "1",
+        "imageSource": "public/images/generadorReportes.png",
+        "title": "Generador de Reportes",
+        "description": "Generador de Reportes de pokemones usando Azure storage Queues, Azure Functions y terraform ",
+        "projectNumber": "3",
         "gitHubLink": "",
-        "tags": ["",""]
-    },
-    {
-        "imageSource": "",
-        "title": "Red Neuronal de Reconocimiento Facial",
-        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
-        "projectNumber": "2",
-        "gitHubLink": "",
-        "tags": ["",""]
-
+        "tags": ["terraform","azure","docker","nextJS","FastAPI"]
     },
     {
         "imageSource": "public/images/evidenciaPortalAzure.png",
@@ -22,6 +13,23 @@
         "description": "Diseñé y desplegué una arquitectura en Azure usando terraform. La infraestructura está enfocada en una empresa de alquiler de vehículos",
         "projectNumber": "3",
         "gitHubLink": "",
-        "tags": ["",""]
+        "tags": ["terraform","azure"]
+    },
+    {
+        "imageSource": "",
+        "title": "Sistema de Registro UNAH",
+        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
+        "projectNumber": "1",
+        "gitHubLink": "",
+        "tags": ["PHP","MySQL","AWS"]
+    },
+    {
+        "imageSource": "",
+        "title": "Red Neuronal de Reconocimiento Facial",
+        "description": "Este proyecto une la plataforma de registro de la UNAH y su campus virtual en uno solo incluyendo módulos como admisiones, matrícula, aula virtual, entre otros",
+        "projectNumber": "2",
+        "gitHubLink": "",
+        "tags": ["Python","Pandas","Anaconda"]
+
     }
 ]
